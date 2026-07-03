@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Toaster } from "@/components/ui/sonner";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Work } from "@/components/site/Work";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { VideoModal } from "@/components/site/VideoModal";
+import { projects, type Project } from "@/data/projects";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Lumen & Co. — Film, Television & Branded Content Studio" },
+      {
+        name: "description",
+        content:
+          "Lumen & Co. is a full-service production studio crafting unscripted series, documentaries, live events, and branded films for networks and brands.",
+      },
+      { property: "og:title", content: "Lumen & Co. — Cinematic Production Studio" },
+      {
+        property: "og:description",
+        content:
+          "Unscripted series, documentaries, live productions, and branded films. Selected work and a full demo reel.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [active, setActive] = useState<Project | null>(null);
+  const openReel = () => setActive(projects[0]);
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-ink">
+      <Nav onReel={openReel} />
+      <main>
+        <Hero onReel={openReel} />
+        <About />
+        <Work onOpen={setActive} />
+        <Contact />
+      </main>
+      <Footer />
+      <VideoModal project={active} onClose={() => setActive(null)} />
+      <Toaster theme="dark" />
     </div>
   );
 }
