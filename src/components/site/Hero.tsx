@@ -18,7 +18,7 @@ export function Hero({ onReel }: { onReel: () => void }) {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cinema"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cinema pt-32 sm:pt-40"
     >
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         <video
