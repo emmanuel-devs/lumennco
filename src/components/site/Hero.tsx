@@ -74,7 +74,7 @@ export function Hero({ onReel }: { onReel: () => void }) {
       <a
         href="#about"
         aria-label="Scroll down"
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-ink-muted animate-bounce"
+        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-ink-muted animate-bounce lg:block"
       >
         <ArrowDown className="h-5 w-5" />
       </a>
