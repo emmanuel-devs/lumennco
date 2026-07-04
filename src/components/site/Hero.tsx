@@ -18,7 +18,7 @@ export function Hero({ onReel }: { onReel: () => void }) {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cinema pt-32 sm:pt-40"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cinema pt-32 pb-32 sm:pt-40 sm:pb-40"
     >
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
         <video
@@ -69,15 +69,16 @@ export function Hero({ onReel }: { onReel: () => void }) {
             See the Work
           </a>
         </div>
-      </div>
 
-      <a
-        href="#about"
-        aria-label="Scroll down"
-        className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-ink-muted animate-bounce lg:block"
-      >
-        <ArrowDown className="h-5 w-5" />
-      </a>
+        <a
+          href="#about"
+          aria-label="Scroll down"
+          className="mt-16 inline-flex flex-col items-center gap-2 text-ink-muted transition hover:text-primary"
+        >
+          <span className="text-[0.65rem] uppercase tracking-[0.3em]">Scroll</span>
+          <ArrowDown className="h-5 w-5 animate-bounce" />
+        </a>
+      </div>
     </section>
   );
 }
