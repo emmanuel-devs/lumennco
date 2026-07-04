@@ -69,15 +69,16 @@ export function Hero({ onReel }: { onReel: () => void }) {
             See the Work
           </a>
         </div>
-      </div>
 
-      <a
-        href="#about"
-        aria-label="Scroll down"
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-ink-muted animate-bounce"
-      >
-        <ArrowDown className="h-5 w-5" />
-      </a>
+        <a
+          href="#about"
+          aria-label="Scroll down"
+          className="mt-16 inline-flex flex-col items-center gap-2 text-ink-muted transition hover:text-primary"
+        >
+          <span className="text-[0.65rem] uppercase tracking-[0.3em]">Scroll</span>
+          <ArrowDown className="h-5 w-5 animate-bounce" />
+        </a>
+      </div>
     </section>
   );
 }
