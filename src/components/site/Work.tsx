@@ -24,7 +24,7 @@ export function Work({ onOpen }: { onOpen: (p: Project) => void }) {
             <button
               key={p.id}
               onClick={() => onOpen(p)}
-              className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-background text-left"
+              className="group relative aspect-video overflow-hidden rounded-lg bg-background text-left grain"
             >
               <img
                 src={p.image}
