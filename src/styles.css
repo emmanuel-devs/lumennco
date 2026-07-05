@@ -155,8 +155,6 @@
 @utility grain {
   position: relative;
   isolation: isolate;
-}
-@utility grain {
   &::after {
     content: "";
     position: absolute;
