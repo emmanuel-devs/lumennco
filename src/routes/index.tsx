@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
+import { Clients } from "@/components/site/Clients";
 import { About } from "@/components/site/About";
 import { Work } from "@/components/site/Work";
 import { Contact } from "@/components/site/Contact";
@@ -40,6 +41,7 @@ function Index() {
       <Nav onReel={openReel} />
       <main>
         <Hero onReel={openReel} />
+        <Clients />
         <About />
         <Work onOpen={setActive} />
         <Contact />

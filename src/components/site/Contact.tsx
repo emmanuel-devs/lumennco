@@ -63,20 +63,16 @@ export function Contact() {
           </div>
 
           <form onSubmit={onSubmit} className="space-y-6">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <Field label="Name" name="name" required />
-              <Field label="Company" name="company" />
-            </div>
+            <Field label="Name" name="name" required />
             <Field label="Email" name="email" type="email" required />
-            <Field label="Project" name="project" placeholder="Series, doc, brand film…" />
             <div>
-              <label className="eyebrow text-ink-muted">Tell us about it</label>
+              <label className="eyebrow text-ink-muted">One-line pitch</label>
               <textarea
                 name="message"
                 required
-                rows={5}
+                rows={3}
                 className="mt-3 w-full resize-none border-0 border-b border-white/20 bg-transparent pb-3 text-lg text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-primary"
-                placeholder="Timeline, scope, budget range…"
+                placeholder="Tell us what you're making…"
               />
             </div>
             <button
@@ -86,6 +82,9 @@ export function Contact() {
             >
               {sending ? "Sending…" : "Send Message"}
             </button>
+            <p className="text-xs uppercase tracking-[0.22em] text-ink-muted">
+              We reply within 1 business day.
+            </p>
           </form>
         </div>
       </div>
