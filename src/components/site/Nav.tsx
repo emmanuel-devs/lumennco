@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { PresetToggle } from "./PresetToggle";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav({ onReel }: { onReel: () => void }) {
@@ -27,7 +28,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <a href="#top" className="flex items-center gap-3 group">
+        <a href="/#top" className="flex items-center gap-3 group">
           <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-primary/60 transition group-hover:border-primary">
             <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_16px_var(--color-primary)]" />
           </span>
@@ -36,7 +37,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -46,6 +47,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
               {l.label}
             </a>
           ))}
+          <PresetToggle />
           <button
             onClick={onReel}
             className="rounded-full border border-primary px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-primary transition hover:bg-primary hover:text-primary-foreground"
@@ -76,6 +78,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
                 {l.label}
               </a>
             ))}
+            <PresetToggle className="self-start" />
             <button
               onClick={() => {
                 setOpen(false);

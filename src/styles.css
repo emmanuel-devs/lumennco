@@ -167,3 +167,27 @@
     background-size: 160px 160px;
   }
 }
+
+/* ---------------------------------------------------------------
+   Colour presets. Default (no attribute) = "studio" warm amber.
+   [data-preset="solo"] = cool graphite/mono, for solo creators.
+   --------------------------------------------------------------- */
+:root[data-preset="solo"] {
+  --background: oklch(0.16 0.012 250);
+  --foreground: oklch(0.97 0.004 250);
+  --ink: oklch(0.97 0.004 250);
+  --ink-muted: oklch(0.7 0.012 250);
+  --cinema: oklch(0.12 0.012 250);
+
+  --card: oklch(0.2 0.012 250);
+  --popover: oklch(0.2 0.012 250);
+
+  --primary: oklch(0.88 0.03 230);
+  --primary-foreground: oklch(0.16 0.012 250);
+  --secondary: oklch(0.24 0.012 250);
+  --muted: oklch(0.24 0.012 250);
+  --muted-foreground: oklch(0.7 0.012 250);
+  --accent: oklch(0.88 0.03 230);
+  --accent-foreground: oklch(0.16 0.012 250);
+  --ring: oklch(0.88 0.03 230);
+}
