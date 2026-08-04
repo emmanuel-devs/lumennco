@@ -48,7 +48,7 @@ function ProjectNotFound() {
 }
 
 function CaseStudy() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
   const [active, setActive] = useState<Project | null>(null);
   const others = projects.filter((p) => p.id !== project.id).slice(0, 3);
 
