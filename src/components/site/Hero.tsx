@@ -1,18 +1,44 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Play, ArrowDown } from "lucide-react";
 import heroPoster from "@/assets/hero-poster.jpg";
+import heroWebm from "@/assets/hero-loop.webm.asset.json";
+import heroMp4 from "@/assets/hero-loop.mp4.asset.json";
 
 export function Hero({ onReel }: { onReel: () => void }) {
   const mediaRef = useRef<HTMLDivElement>(null);
+  const [playVideo, setPlayVideo] = useState(false);
 
+  // Parallax, rAF-throttled and disabled for reduced-motion / small screens.
   useEffect(() => {
-    const onScroll = () => {
-      if (!mediaRef.current) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || window.innerWidth < 640) return;
+    let raf = 0;
+    const apply = () => {
+      raf = 0;
+      const el = mediaRef.current;
+      if (!el) return;
       const y = window.scrollY;
-      mediaRef.current.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y * 0.0004})`;
+      if (y > window.innerHeight) return;
+      el.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y * 0.0004})`;
+    };
+    const onScroll = () => {
+      if (!raf) raf = window.requestAnimationFrame(apply);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // Only fetch the video after first paint, on capable connections.
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
+    const slow = conn?.saveData || /2g/.test(conn?.effectiveType ?? "");
+    if (reduced || slow || window.innerWidth < 640) return;
+    const id = window.setTimeout(() => setPlayVideo(true), 300);
+    return () => window.clearTimeout(id);
   }, []);
 
   return (
@@ -21,20 +47,28 @@ export function Hero({ onReel }: { onReel: () => void }) {
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-cinema pt-32 pb-32 sm:pt-40 sm:pb-40 grain"
     >
       <div ref={mediaRef} className="absolute inset-0 will-change-transform">
-        <video
+        <img
+          src={heroPoster}
+          alt="Cinema camera on a darkened film set"
+          width={1920}
+          height={1080}
           className="h-full w-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={heroPoster}
-          preload="metadata"
-        >
-          <source
-            src="https://cdn.coverr.co/videos/coverr-a-cinema-camera-on-a-set-9018/1080p.mp4"
-            type="video/mp4"
-          />
-        </video>
+        />
+        {playVideo && (
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster={heroPoster}
+            aria-hidden="true"
+          >
+            <source src={heroWebm.url} type="video/webm" />
+            <source src={heroMp4.url} type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--color-background)_90%)]" />
       </div>
@@ -57,14 +91,14 @@ export function Hero({ onReel }: { onReel: () => void }) {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4 animate-fade-in">
           <button
             onClick={onReel}
-            className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-primary-foreground transition hover:bg-primary/90"
+            className="group inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-primary-foreground transition hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             <Play className="h-4 w-4 fill-current" />
             Watch Reel
           </button>
           <a
             href="#work"
-            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-ink transition hover:border-primary hover:text-primary"
+            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-ink transition hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             See the Work
           </a>

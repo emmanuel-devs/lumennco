@@ -10,10 +10,13 @@ import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { VideoModal } from "@/components/site/VideoModal";
 import { projects, type Project } from "@/data/projects";
+import heroPoster from "@/assets/hero-poster.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
+    links: [{ rel: "preload", as: "image", href: heroPoster, fetchPriority: "high" }],
     meta: [
+
       { title: "Lumen & Co. — Film, Television & Branded Content Studio" },
       {
         name: "description",
