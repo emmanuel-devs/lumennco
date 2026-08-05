@@ -14,7 +14,7 @@ import heroPoster from "@/assets/hero-poster.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
-    links: [{ rel: "preload", as: "image", href: heroPoster, fetchpriority: "high" }],
+    links: [{ rel: "preload", as: "image", href: heroPoster, fetchPriority: "high" }],
     meta: [
 
       { title: "Lumen & Co. — Film, Television & Branded Content Studio" },
