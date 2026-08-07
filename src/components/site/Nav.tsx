@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { PresetToggle } from "./PresetToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -23,7 +24,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/70 py-3 backdrop-blur-lg border-b border-white/5"
+          ? "bg-background/70 py-3 backdrop-blur-lg border-b border-border/60"
           : "bg-transparent py-6"
       }`}
     >
@@ -48,6 +49,8 @@ export function Nav({ onReel }: { onReel: () => void }) {
             </a>
           ))}
           <PresetToggle />
+          <ThemeToggle />
+
           <button
             onClick={onReel}
             className="rounded-full border border-primary px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-primary transition hover:bg-primary hover:text-primary-foreground"
@@ -67,7 +70,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
 
       {open && (
         <div className="md:hidden mx-auto mt-4 max-w-7xl px-6 pb-4 animate-fade-in">
-          <div className="flex flex-col gap-4 border-t border-white/10 pt-4">
+          <div className="flex flex-col gap-4 border-t border-border pt-4">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -78,7 +81,11 @@ export function Nav({ onReel }: { onReel: () => void }) {
                 {l.label}
               </a>
             ))}
-            <PresetToggle className="self-start" />
+            <div className="flex items-center gap-3">
+              <PresetToggle className="self-start" />
+              <ThemeToggle />
+            </div>
+
             <button
               onClick={() => {
                 setOpen(false);

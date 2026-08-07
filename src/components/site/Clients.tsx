@@ -16,7 +16,7 @@ export function Clients() {
   return (
     <section
       aria-label="Trusted by"
-      className="relative border-t border-white/5 bg-background py-16 sm:py-20"
+      className="relative border-t border-border/60 bg-background py-16 sm:py-20"
     >
       <div ref={ref} className="reveal mx-auto max-w-7xl px-6">
         <p className="eyebrow text-center text-ink-muted">Trusted by networks & brands</p>

@@ -20,7 +20,7 @@ export function PresetToggle({ className = "" }: { className?: string }) {
     <div
       role="group"
       aria-label="Colour preset"
-      className={`inline-flex items-center rounded-full border border-white/15 p-0.5 ${className}`}
+      className={`inline-flex items-center rounded-full border border-border p-0.5 ${className}`}
     >
       {(["studio", "solo"] as const).map((p) => (
         <button

@@ -34,6 +34,11 @@
   --color-ink-muted: var(--ink-muted);
   --color-cinema: var(--cinema);
 
+  /* Always-dark overlay + always-light text for content sitting on imagery */
+  --color-scrim: var(--scrim);
+  --color-on-media: var(--on-media);
+  --color-on-media-muted: var(--on-media-muted);
+
   --font-display: "Anton", "Impact", sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -47,6 +52,10 @@
   --ink: oklch(0.96 0.005 90);
   --ink-muted: oklch(0.68 0.01 90);
   --cinema: oklch(0.11 0.005 260);               /* deeper black for wells */
+
+  --scrim: oklch(0.1 0.005 260);
+  --on-media: oklch(0.97 0.005 90);
+  --on-media-muted: oklch(0.84 0.01 90);
 
   --card: oklch(0.17 0.005 260);
   --card-foreground: var(--foreground);
@@ -190,4 +199,60 @@
   --accent: oklch(0.88 0.03 230);
   --accent-foreground: oklch(0.16 0.012 250);
   --ring: oklch(0.88 0.03 230);
+}
+
+/* ---------------------------------------------------------------
+   Light mode — editorial "gallery print" counterpart to the
+   cinematic dark theme. Applied via html[data-theme="light"].
+   --------------------------------------------------------------- */
+:root[data-theme="light"] {
+  --background: oklch(0.975 0.006 85);           /* warm paper */
+  --foreground: oklch(0.2 0.01 60);
+  --ink: oklch(0.2 0.01 60);
+  --ink-muted: oklch(0.48 0.012 65);
+  --cinema: oklch(0.945 0.008 85);               /* recessed wells */
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+
+  --primary: oklch(0.56 0.13 62);                /* deeper amber for contrast */
+  --primary-foreground: oklch(0.98 0.004 85);
+  --secondary: oklch(0.93 0.008 85);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.93 0.008 85);
+  --muted-foreground: oklch(0.48 0.012 65);
+  --accent: oklch(0.56 0.13 62);
+  --accent-foreground: oklch(0.98 0.004 85);
+
+  --border: oklch(0.2 0.01 60 / 14%);
+  --input: oklch(0.2 0.01 60 / 18%);
+  --ring: oklch(0.56 0.13 62);
+}
+
+:root[data-theme="light"][data-preset="solo"] {
+  --background: oklch(0.97 0.004 250);
+  --foreground: oklch(0.22 0.012 250);
+  --ink: oklch(0.22 0.012 250);
+  --ink-muted: oklch(0.5 0.012 250);
+  --cinema: oklch(0.94 0.006 250);
+
+  --card: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+
+  --primary: oklch(0.45 0.06 245);
+  --primary-foreground: oklch(0.98 0.004 250);
+  --secondary: oklch(0.93 0.006 250);
+  --muted: oklch(0.93 0.006 250);
+  --muted-foreground: oklch(0.5 0.012 250);
+  --accent: oklch(0.45 0.06 245);
+  --accent-foreground: oklch(0.98 0.004 250);
+  --ring: oklch(0.45 0.06 245);
+}
+
+/* Grain reads heavier on paper — soften it, and switch blend mode. */
+:root[data-theme="light"] .grain::after {
+  opacity: 0.05;
+  mix-blend-mode: multiply;
 }

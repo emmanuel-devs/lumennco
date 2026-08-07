@@ -17,7 +17,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative border-t border-white/5 bg-background py-32 sm:py-44">
+    <section id="contact" className="relative border-t border-border/60 bg-background py-32 sm:py-44">
       <div ref={ref} className="reveal mx-auto max-w-7xl px-6">
         <p className="eyebrow">Start a Project</p>
         <h2 className="font-display mt-6 text-[clamp(3rem,9vw,9rem)] uppercase leading-[0.9] text-ink">
@@ -71,7 +71,7 @@ export function Contact() {
                 name="message"
                 required
                 rows={3}
-                className="mt-3 w-full resize-none border-0 border-b border-white/20 bg-transparent pb-3 text-lg text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-primary"
+                className="mt-3 w-full resize-none border-0 border-b border-border bg-transparent pb-3 text-lg text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-primary"
                 placeholder="Tell us what you're making…"
               />
             </div>
@@ -116,7 +116,7 @@ function Field({
         name={name}
         required={required}
         placeholder={placeholder}
-        className="mt-3 w-full border-0 border-b border-white/20 bg-transparent pb-3 text-lg text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-primary"
+        className="mt-3 w-full border-0 border-b border-border bg-transparent pb-3 text-lg text-ink outline-none transition placeholder:text-ink-muted/60 focus:border-primary"
       />
     </div>
   );

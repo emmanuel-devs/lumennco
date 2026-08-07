@@ -70,19 +70,19 @@ function CaseStudy() {
             alt={`${project.title} still`}
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-scrim via-scrim/70 to-scrim/30" />
           <div className="relative z-[2] mx-auto w-full max-w-7xl px-6">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.24em] text-ink-muted transition hover:text-primary"
+              className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.24em] text-on-media-muted transition hover:text-primary"
             >
               <ArrowLeft className="h-3.5 w-3.5" /> All work
             </Link>
-            <p className="eyebrow mt-8">{project.category}</p>
-            <h1 className="font-display mt-4 text-[clamp(2.75rem,9vw,8rem)] uppercase text-ink">
+            <p className="eyebrow mt-8 text-on-media-muted">{project.category}</p>
+            <h1 className="font-display mt-4 text-[clamp(2.75rem,9vw,8rem)] uppercase text-on-media">
               {project.title}
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-ink-muted">{project.description}</p>
+            <p className="mt-6 max-w-xl text-lg text-on-media-muted">{project.description}</p>
             <button
               onClick={() => setActive(project)}
               className="mt-10 inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-primary-foreground transition hover:bg-primary/90"
@@ -92,7 +92,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-background">
+        <section className="border-t border-border bg-background">
           <div className="mx-auto grid max-w-7xl gap-y-8 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
             {facts.map((f) => (
               <div key={f.k}>
@@ -103,7 +103,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-background py-24 sm:py-32">
+        <section className="border-t border-border/60 bg-background py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr]">
             <div>
               <p className="eyebrow">The Work</p>
@@ -114,7 +114,7 @@ function CaseStudy() {
                 {project.services.map((s) => (
                   <span
                     key={s}
-                    className="rounded-full border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted"
+                    className="rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted"
                   >
                     {s}
                   </span>
@@ -138,7 +138,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-cinema py-20 sm:py-28">
+        <section className="border-t border-border/60 bg-cinema py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <p className="eyebrow">Stills</p>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -154,7 +154,7 @@ function CaseStudy() {
               ))}
             </div>
 
-            <div className="mt-20 grid gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-20 grid gap-y-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4">
               {project.credits.map((c) => (
                 <div key={c.role}>
                   <div className="text-[0.65rem] uppercase tracking-[0.24em] text-ink-muted">
@@ -167,7 +167,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-background py-24">
+        <section className="border-t border-border/60 bg-background py-24">
           <div className="mx-auto max-w-7xl px-6">
             <p className="eyebrow">Next Projects</p>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -184,10 +184,10 @@ function CaseStudy() {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-scrim via-scrim/35 to-transparent" />
                   <div className="absolute inset-0 z-[2] flex flex-col justify-end p-5">
-                    <p className="eyebrow text-primary">{p.category}</p>
-                    <h3 className="font-display mt-1 text-xl uppercase text-ink">{p.title}</h3>
+                    <p className="eyebrow text-on-media-muted">{p.category}</p>
+                    <h3 className="font-display mt-1 text-xl uppercase text-on-media">{p.title}</h3>
                   </div>
                 </Link>
               ))}
