@@ -70,7 +70,7 @@ function CaseStudy() {
             alt={`${project.title} still`}
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-scrim via-scrim/70 to-scrim/30" />
           <div className="relative z-[2] mx-auto w-full max-w-7xl px-6">
             <Link
               to="/"
@@ -184,7 +184,7 @@ function CaseStudy() {
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-scrim via-scrim/35 to-transparent" />
                   <div className="absolute inset-0 z-[2] flex flex-col justify-end p-5">
                     <p className="eyebrow text-primary">{p.category}</p>
                     <h3 className="font-display mt-1 text-xl uppercase text-ink">{p.title}</h3>
