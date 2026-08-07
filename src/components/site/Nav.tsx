@@ -23,7 +23,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/70 py-3 backdrop-blur-lg border-b border-white/5"
+          ? "bg-background/70 py-3 backdrop-blur-lg border-b border-border/60"
           : "bg-transparent py-6"
       }`}
     >
@@ -67,7 +67,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
 
       {open && (
         <div className="md:hidden mx-auto mt-4 max-w-7xl px-6 pb-4 animate-fade-in">
-          <div className="flex flex-col gap-4 border-t border-white/10 pt-4">
+          <div className="flex flex-col gap-4 border-t border-border pt-4">
             {links.map((l) => (
               <a
                 key={l.href}

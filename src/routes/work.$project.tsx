@@ -92,7 +92,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/10 bg-background">
+        <section className="border-t border-border bg-background">
           <div className="mx-auto grid max-w-7xl gap-y-8 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4">
             {facts.map((f) => (
               <div key={f.k}>
@@ -103,7 +103,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-background py-24 sm:py-32">
+        <section className="border-t border-border/60 bg-background py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-[1fr_1.2fr]">
             <div>
               <p className="eyebrow">The Work</p>
@@ -114,7 +114,7 @@ function CaseStudy() {
                 {project.services.map((s) => (
                   <span
                     key={s}
-                    className="rounded-full border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted"
+                    className="rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted"
                   >
                     {s}
                   </span>
@@ -138,7 +138,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-cinema py-20 sm:py-28">
+        <section className="border-t border-border/60 bg-cinema py-20 sm:py-28">
           <div className="mx-auto max-w-7xl px-6">
             <p className="eyebrow">Stills</p>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">
@@ -154,7 +154,7 @@ function CaseStudy() {
               ))}
             </div>
 
-            <div className="mt-20 grid gap-y-8 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-20 grid gap-y-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4">
               {project.credits.map((c) => (
                 <div key={c.role}>
                   <div className="text-[0.65rem] uppercase tracking-[0.24em] text-ink-muted">
@@ -167,7 +167,7 @@ function CaseStudy() {
           </div>
         </section>
 
-        <section className="border-t border-white/5 bg-background py-24">
+        <section className="border-t border-border/60 bg-background py-24">
           <div className="mx-auto max-w-7xl px-6">
             <p className="eyebrow">Next Projects</p>
             <div className="mt-8 grid gap-5 sm:grid-cols-3">

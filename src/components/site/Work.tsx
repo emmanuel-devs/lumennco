@@ -6,7 +6,7 @@ import { useReveal } from "@/hooks/useReveal";
 export function Work({ onOpen }: { onOpen: (p: Project) => void }) {
   const ref = useReveal();
   return (
-    <section id="work" className="relative border-t border-white/5 bg-cinema py-32 sm:py-44">
+    <section id="work" className="relative border-t border-border/60 bg-cinema py-32 sm:py-44">
       <div ref={ref} className="reveal mx-auto max-w-7xl px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
@@ -60,7 +60,7 @@ export function Work({ onOpen }: { onOpen: (p: Project) => void }) {
               <button
                 onClick={() => onOpen(p)}
                 aria-label={`Play ${p.title} trailer`}
-                className="absolute right-5 top-5 z-[3] flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/30 text-ink backdrop-blur-sm transition hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                className="absolute right-5 top-5 z-[3] flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background/40 text-ink backdrop-blur-sm transition hover:border-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <Play className="h-4 w-4 fill-current" />
               </button>

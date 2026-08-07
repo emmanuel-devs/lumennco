@@ -19,7 +19,7 @@ const stats = [
 export function About() {
   const ref = useReveal();
   return (
-    <section id="about" className="relative border-t border-white/5 bg-background py-32 sm:py-44">
+    <section id="about" className="relative border-t border-border/60 bg-background py-32 sm:py-44">
       <div ref={ref} className="reveal mx-auto max-w-7xl px-6">
         <p className="eyebrow">About the Studio</p>
         <div className="mt-8 grid gap-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
@@ -42,7 +42,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-24 grid gap-y-10 border-y border-white/10 py-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-24 grid gap-y-10 border-y border-border py-10 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.v}>
               <div className="font-display text-5xl text-primary">{s.k}</div>
@@ -55,7 +55,7 @@ export function About() {
           {capabilities.map((c) => (
             <span
               key={c}
-              className="rounded-full border border-white/15 px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted transition hover:border-primary hover:text-primary"
+              className="rounded-full border border-border px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink-muted transition hover:border-primary hover:text-primary"
             >
               {c}
             </span>

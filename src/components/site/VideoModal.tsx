@@ -33,7 +33,7 @@ export function VideoModal({ project, onClose }: Props) {
       <button
         onClick={onClose}
         aria-label="Close video"
-        className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-ink transition hover:border-primary hover:text-primary"
+        className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink transition hover:border-primary hover:text-primary"
       >
         <X className="h-5 w-5" />
       </button>

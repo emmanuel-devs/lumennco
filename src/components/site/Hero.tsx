@@ -98,7 +98,7 @@ export function Hero({ onReel }: { onReel: () => void }) {
           </button>
           <a
             href="#work"
-            className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-ink transition hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            className="inline-flex items-center gap-3 rounded-full border border-border px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-ink transition hover:border-primary hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             See the Work
           </a>
