@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { PresetToggle } from "./PresetToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -48,6 +49,8 @@ export function Nav({ onReel }: { onReel: () => void }) {
             </a>
           ))}
           <PresetToggle />
+          <ThemeToggle />
+
           <button
             onClick={onReel}
             className="rounded-full border border-primary px-5 py-2 text-xs font-medium uppercase tracking-[0.22em] text-primary transition hover:bg-primary hover:text-primary-foreground"
@@ -78,7 +81,11 @@ export function Nav({ onReel }: { onReel: () => void }) {
                 {l.label}
               </a>
             ))}
-            <PresetToggle className="self-start" />
+            <div className="flex items-center gap-3">
+              <PresetToggle className="self-start" />
+              <ThemeToggle />
+            </div>
+
             <button
               onClick={() => {
                 setOpen(false);
