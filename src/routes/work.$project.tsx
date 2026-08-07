@@ -74,15 +74,15 @@ function CaseStudy() {
           <div className="relative z-[2] mx-auto w-full max-w-7xl px-6">
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.24em] text-ink-muted transition hover:text-primary"
+              className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.24em] text-on-media-muted transition hover:text-primary"
             >
               <ArrowLeft className="h-3.5 w-3.5" /> All work
             </Link>
-            <p className="eyebrow mt-8">{project.category}</p>
-            <h1 className="font-display mt-4 text-[clamp(2.75rem,9vw,8rem)] uppercase text-ink">
+            <p className="eyebrow mt-8 text-on-media-muted">{project.category}</p>
+            <h1 className="font-display mt-4 text-[clamp(2.75rem,9vw,8rem)] uppercase text-on-media">
               {project.title}
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-ink-muted">{project.description}</p>
+            <p className="mt-6 max-w-xl text-lg text-on-media-muted">{project.description}</p>
             <button
               onClick={() => setActive(project)}
               className="mt-10 inline-flex items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-medium uppercase tracking-[0.22em] text-primary-foreground transition hover:bg-primary/90"
@@ -186,8 +186,8 @@ function CaseStudy() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-scrim via-scrim/35 to-transparent" />
                   <div className="absolute inset-0 z-[2] flex flex-col justify-end p-5">
-                    <p className="eyebrow text-primary">{p.category}</p>
-                    <h3 className="font-display mt-1 text-xl uppercase text-ink">{p.title}</h3>
+                    <p className="eyebrow text-on-media-muted">{p.category}</p>
+                    <h3 className="font-display mt-1 text-xl uppercase text-on-media">{p.title}</h3>
                   </div>
                 </Link>
               ))}
