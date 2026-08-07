@@ -34,6 +34,11 @@
   --color-ink-muted: var(--ink-muted);
   --color-cinema: var(--cinema);
 
+  /* Always-dark overlay + always-light text for content sitting on imagery */
+  --color-scrim: var(--scrim);
+  --color-on-media: var(--on-media);
+  --color-on-media-muted: var(--on-media-muted);
+
   --font-display: "Anton", "Impact", sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
