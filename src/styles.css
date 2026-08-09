@@ -178,30 +178,6 @@
 }
 
 /* ---------------------------------------------------------------
-   Colour presets. Default (no attribute) = "studio" warm amber.
-   [data-preset="solo"] = cool graphite/mono, for solo creators.
-   --------------------------------------------------------------- */
-:root[data-preset="solo"] {
-  --background: oklch(0.16 0.012 250);
-  --foreground: oklch(0.97 0.004 250);
-  --ink: oklch(0.97 0.004 250);
-  --ink-muted: oklch(0.7 0.012 250);
-  --cinema: oklch(0.12 0.012 250);
-
-  --card: oklch(0.2 0.012 250);
-  --popover: oklch(0.2 0.012 250);
-
-  --primary: oklch(0.88 0.03 230);
-  --primary-foreground: oklch(0.16 0.012 250);
-  --secondary: oklch(0.24 0.012 250);
-  --muted: oklch(0.24 0.012 250);
-  --muted-foreground: oklch(0.7 0.012 250);
-  --accent: oklch(0.88 0.03 230);
-  --accent-foreground: oklch(0.16 0.012 250);
-  --ring: oklch(0.88 0.03 230);
-}
-
-/* ---------------------------------------------------------------
    Light mode — editorial "gallery print" counterpart to the
    cinematic dark theme. Applied via html[data-theme="light"].
    --------------------------------------------------------------- */
@@ -229,26 +205,6 @@
   --border: oklch(0.2 0.01 60 / 14%);
   --input: oklch(0.2 0.01 60 / 18%);
   --ring: oklch(0.56 0.13 62);
-}
-
-:root[data-theme="light"][data-preset="solo"] {
-  --background: oklch(0.97 0.004 250);
-  --foreground: oklch(0.22 0.012 250);
-  --ink: oklch(0.22 0.012 250);
-  --ink-muted: oklch(0.5 0.012 250);
-  --cinema: oklch(0.94 0.006 250);
-
-  --card: oklch(1 0 0);
-  --popover: oklch(1 0 0);
-
-  --primary: oklch(0.45 0.06 245);
-  --primary-foreground: oklch(0.98 0.004 250);
-  --secondary: oklch(0.93 0.006 250);
-  --muted: oklch(0.93 0.006 250);
-  --muted-foreground: oklch(0.5 0.012 250);
-  --accent: oklch(0.45 0.06 245);
-  --accent-foreground: oklch(0.98 0.004 250);
-  --ring: oklch(0.45 0.06 245);
 }
 
 /* Grain reads heavier on paper — soften it, and switch blend mode. */
