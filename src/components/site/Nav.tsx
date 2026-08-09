@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { PresetToggle } from "./PresetToggle";
+
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
@@ -48,7 +48,7 @@ export function Nav({ onReel }: { onReel: () => void }) {
               {l.label}
             </a>
           ))}
-          <PresetToggle />
+          
           <ThemeToggle />
 
           <button
@@ -82,7 +82,6 @@ export function Nav({ onReel }: { onReel: () => void }) {
               </a>
             ))}
             <div className="flex items-center gap-3">
-              <PresetToggle className="self-start" />
               <ThemeToggle />
             </div>
 
